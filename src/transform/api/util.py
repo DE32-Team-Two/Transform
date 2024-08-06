@@ -1,7 +1,7 @@
 import pandas as pd
 
 def merge(load_dt):
-    read_df = pd.read_parquet('~/t2/test_parquet/year=2022/month=01')
+    read_df = pd.read_parquet('~/t2/test_parquet/year=load_dt[0:4]/month=load_dt[4:6]')
     cols = ['movieCd', 'movieNm', 'audiCnt']
     df = read_df[cols].copy()
     
