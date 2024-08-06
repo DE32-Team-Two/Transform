@@ -18,7 +18,7 @@ def merge(load_dt):
 
     read_df = pd.read_parquet(f'~/t2/test_parquet/year={load_dt[0:4]}/month={m}')
     read_df['year'] = str(load_dt[0:4])
-    read_df['month'] = str(load_dt[4:6])
+    read_df['month'] = m
     print(read_df.dtypes)
     cols = ['movieCd', 'movieNm', 'audiCnt', 'year', 'month']
     df = read_df[cols].copy()
