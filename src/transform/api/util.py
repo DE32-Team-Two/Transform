@@ -20,6 +20,8 @@ def merge(load_dt):
     df_grouped = df.groupby('movieCd').agg({
         'movieNm': 'first',
         'audiCnt': 'sum',
+        'year': 'second',
+        'month': 'third'
     }).reset_index()
     
     save2parqeut(load_dt,df_grouped)
