@@ -1,7 +1,7 @@
 import pandas as pd
 
 def save2parqeut(ds_nodash, df):
-    df.to_parquet(f'~/t2/test_parquet/ordered_parquet/{ds_nodash[4:6]}')
+    df.to_parquet(f'~/t2/test_parquet/ordered_parquet/{ds_nodash[4:6]}/')
 
 def merge(load_dt):
     m = str(int(load_dt[4:6]) - 1)
