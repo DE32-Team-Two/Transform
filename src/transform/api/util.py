@@ -22,5 +22,5 @@ def merge(load_dt):
         'audiCnt': 'sum'
     }).reset_index()
     
-    save2parquet(load_dt,df_grouped)
+    save2parqeut(load_dt,df_grouped)
 
