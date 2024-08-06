@@ -8,7 +8,7 @@ def save2parqeut(ds_nodash, df):
     exist_parquet(base_path, ds_nodash[0:4], ds_nodash[4:6])
 
     df.to_parquet(f'~/t2/test_parquet/ordered_parquet/', partition_cols=['year','month'])
-    df_sorted = df.sort_values(by='audiCnt')
+    df_sorted = df.sort_values(by='audiCnt', ascending=False)
     
     return df_sorted
 
