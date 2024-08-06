@@ -8,6 +8,9 @@ def save2parqeut(ds_nodash, df):
     exist_parquet(base_path, ds_nodash[0:4], ds_nodash[4:6])
 
     df.to_parquet(f'~/t2/test_parquet/ordered_parquet/', partition_cols=['year','month'])
+    df_sorted = df.sort_values(by='audiCnt')
+    
+    return df_sorted
 
 def merge(load_dt):
 
@@ -34,7 +37,8 @@ def merge(load_dt):
         'month': 'first'
     }).reset_index()
     
-    save2parqeut(load_dt,df_grouped)
+    df = save2parqeut(load_dt,df_grouped)
+    return df
 
 def exist_parquet(parquet_path, year, month):
     import os
