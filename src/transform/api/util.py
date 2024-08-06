@@ -36,7 +36,11 @@ def merge(load_dt):
         'year': 'first',
         'month': 'first'
     }).reset_index()
-    
+	
+	df_grouped.sort_values(by=['audiCnt'])
+	print('='*33)
+    print(df_grouped)
+	print('='*33)
     df = save2parqeut(load_dt,df_grouped)
     return df
 
