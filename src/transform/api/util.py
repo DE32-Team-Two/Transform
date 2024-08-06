@@ -10,6 +10,7 @@ def merge(load_dt):
         m = '0' + str(m)
 
     read_df = pd.read_parquet(f'~/t2/test_parquet/year={load_dt[0:4]}/month={m}')
+    print(read_df.dtypes())
     cols = ['movieCd', 'movieNm', 'audiCnt', 'year', 'month']
     df = read_df[cols].copy()
     
@@ -20,8 +21,8 @@ def merge(load_dt):
     df_grouped = df.groupby('movieCd').agg({
         'movieNm': 'first',
         'audiCnt': 'sum',
-        'year': 'second',
-        'month': 'third'
+        'year': 'first',
+        'month': 'first'
     }).reset_index()
     
     save2parqeut(load_dt,df_grouped)
