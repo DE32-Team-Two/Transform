@@ -40,7 +40,7 @@ def merge(load_dt):
     print(df_grouped)
     print('='*33)
 
-    df_grouped = df_grouped.sort_values(by=['audiCnt'])
+    df_grouped = df_grouped.sort_values(by=['audiCnt'], ascending=False)
     print(('='*15) + 'order after' +('='*15))
     print(df_grouped)
     print('='*33)
